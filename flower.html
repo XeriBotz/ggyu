@@ -1,6 +1,5 @@
 <!DOCTYPE html>
   <h1>Xcel-valentine</h1>
-  <button id="stopMusic" class="btn stop-btn">Hentikan Musik</button>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -320,22 +319,4 @@
 </body>
 
 </html>
-
-<!-- Import Javascript -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-      let music = new Audio("valentine.mp3");
-      music.loop = true;
-
-      // Cek apakah musik harus diputar
-      if (localStorage.getItem("musicPlaying") === "true") {
-        music.play();
-      }
-
-      document.getElementById("stopMusic").addEventListener("click", function() {
-        music.pause();
-        localStorage.setItem("musicPlaying", "false");
-      });
-    });
-  </script>
 <script src="main.js"></script>
