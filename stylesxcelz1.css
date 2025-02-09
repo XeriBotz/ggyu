@@ -1,0 +1,169 @@
+/* --- Import Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Global Styles --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* --- Container Utama --- */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* --- Animasi Fade In --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Gambar Valentine & Flower --- */
+.valentine-img, .flower-img {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease-in-out;
+}
+
+.valentine-img:hover, .flower-img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Tombol Umum --- */
+.btn {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Tombol Putar Musik --- */
+.play-btn {
+  background: linear-gradient(135deg, #ff4d6d, #ff1f4d);
+  color: white;
+  box-shadow: 0px 5px 15px rgba(255, 77, 109, 0.5);
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(255, 77, 109, 0.7);
+}
+
+/* --- Tombol Halaman Selanjutnya --- */
+.next-btn {
+  background: linear-gradient(135deg, #6c5ce7, #4834d4);
+  color: white;
+  box-shadow: 0px 5px 15px rgba(108, 92, 231, 0.5);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: all 0.3s ease-in-out;
+}
+
+.next-btn:enabled {
+  cursor: pointer;
+  opacity: 1;
+  animation: pulse 1.5s infinite;
+}
+
+.next-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(108, 92, 231, 0.7);
+}
+
+/* --- Efek Animasi Pulse --- */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Efek Love Floating Hearts --- */
+@keyframes floatingHearts {
+  0% { transform: translateY(0px) scale(1); opacity: 1; }
+  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  clip-path: polygon(50% 0%, 100% 40%, 75% 100%, 50% 80%, 25% 100%, 0% 40%);
+  animation: floatingHearts 3s infinite ease-in-out;
+}
+
+/* --- Efek Love Rain --- */
+@keyframes loveRain {
+  0% { transform: translateY(0px); opacity: 1; }
+  100% { transform: translateY(-600px); opacity: 0; }
+}
+
+.love-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.love {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: red;
+  clip-path: polygon(50% 0%, 100% 40%, 75% 100%, 50% 80%, 25% 100%, 0% 40%);
+  animation: loveRain 3s infinite linear;
+  opacity: 0.7;
+}
+
+/* --- Menghasilkan Love Random --- */
+.love:nth-child(1) { left: 10%; animation-duration: 4s; animation-delay: 0s; }
+.love:nth-child(2) { left: 20%; animation-duration: 5s; animation-delay: 1s; }
+.love:nth-child(3) { left: 30%; animation-duration: 3s; animation-delay: 2s; }
+.love:nth-child(4) { left: 40%; animation-duration: 6s; animation-delay: 3s; }
+.love:nth-child(5) { left: 50%; animation-duration: 4s; animation-delay: 4s; }
+.love:nth-child(6) { left: 60%; animation-duration: 5s; animation-delay: 5s; }
+.love:nth-child(7) { left: 70%; animation-duration: 3s; animation-delay: 6s; }
+.love:nth-child(8) { left: 80%; animation-duration: 6s; animation-delay: 7s; }
+.love:nth-child(9) { left: 90%; animation-duration: 4s; animation-delay: 8s; }
+.love:nth-child(10) { left: 100%; animation-duration: 5s; animation-delay: 9s; }
+
+/* --- Efek Floating pada Kotak --- */
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.center {
+  animation: floating 3s infinite ease-in-out;
+}

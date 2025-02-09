@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xcel-valentine</title>
+  <link rel="stylesheet" href="stylesxcelz1.css">
+</head>
+<body>
+
+  <div class="center">
+    <img src="https://i.pinimg.com/236x/e5/24/12/e52412ade4d756a104c4cadfad35ccd2.jpg" alt="cat" class="valentine-img">
+    
+    <audio id="valentineMusic">
+      <source src="valentine.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button id="playMusic" class="btn play-btn">Putar Musik</button>
+    <button id="nextPage" class="btn next-btn" disabled>Ke Halaman Selanjutnya</button>
+  </div>
+
+  <script>
+    document.getElementById("playMusic").addEventListener("click", function() {
+      let music = document.getElementById("valentineMusic");
+      music.play();
+      this.innerText = "Musik Diputar 🎶";
+      this.disabled = true;
+      document.getElementById("nextPage").disabled = false;
+    });
+
+    document.getElementById("nextPage").addEventListener("click", function() {
+      window.location.href = "xcel.html";
+    });
+  </script>
+
+</body>
+</html>
